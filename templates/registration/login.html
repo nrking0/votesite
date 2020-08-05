@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'votesite/css/loginstyle.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}" >
+
+<body>
+
+    <div class="loginbox">
+        <h1>Please Login to Vote</h1>
+        {% if form.errors %}
+        <h2>Your username or password didn't match!</h2>
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="Login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+            <a href="{% url 'contact' %}">Need an account?</a></br>
+            <a href="{% url 'home' %}">Go back home</a>
+        </form>
+    </div>
+
+
+</body>
+
+
+</head>
+
+
+</html>

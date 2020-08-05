@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'votesite/css/loginstyle.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}">
+
+<body>
+
+    <div class="loginbox">
+        </br>
+        <h1>Hello, {{username}}!</h1>
+        </br>
+        <h4 style="text-align: center;">Options:</h4>
+     
+        <h3 style="text-align: center;"><a href="{% url 'logout' %}">Logout</a></h3>
+     
+        <h3 style="text-align: center;"><a href="#">Update Profile Information</a></h3>
+    
+        <h3 style="text-align: center;"><a href="{% url 'contact' %}">Get Help</a></h3>
+
+        <h3 style="text-align: center;"><a href="{% url 'home' %}">Go Home</a></h3>
+
+    </div>
+
+
+</body>
+
+
+</head>
+
+
+</html>

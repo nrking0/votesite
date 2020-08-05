@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+
+<html>
+	<head>
+		<title>Vote U-High</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="{% static 'votesite/css/main.css' %}" />
+        <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}" >
+        <meta http-equiv="cache-control" content="no-cache" />
+        
+	</head>
+	<body>
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<a href="{% url 'home' %}">Home</a>
+			<a href="{% url 'poll:index' %}">Polls</a>
+			<a href="{% url 'contact' %}">Contact</a>
+			<a href="{% url 'profile' %}">Account</a>
+			
+			
+			
+			<!--<div class="container">
+			  <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				  <span class="sr-only">Toggle navigation</span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				  <span class="icon-bar"></span>
+				</button>
+			  </div>
+			  <div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+				  <li><a href="#">About</a></li>
+				  <li><a href="#">Link</a></li>
+				  <li><a href="#">Another Link</a></li>
+				</ul>
+			</div>-->
+		  </nav>
+
+
+
+
+
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="inner">
+					<h1>Vote U-High</h1>
+                    <p>A mock election for students at <a href="https://www.uhigh.ilstu.edu/blogs/main/">University High School</a></p>
+                    
+                </div>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Banner -->
+					<section id="intro" class="main">
+						<span class="icon fa-check-square-o major"></span>
+                        <h2>Cast your vote now!</h2>
+                        <p>As our nation faces a global pandemic and economic crisis, we also have a presidential election on the horizon. With the 2020 Presidential Election only getting more polarized, every vote could make a true difference. As a precursor to the upcoming election, we are hosting a mock election for any University High School student! The voting is quick, easy, and completly anonymous. So what are you waiting for? Vote today!</p>
+						<p>For security and accuracy, each student is required to login to vote. Requesting a login only requires your name, @ilstu.edu email, and Student ID. Once you have your login, click the button below to be brought to the poll. From there you simply choose your candidate and hit vote, it's that easy!</p>
+						<ul class="actions">
+							<li><a href="{% url 'poll:index' %}" class="button big">Vote!</a></li>
+							<li><a href="{% url 'contact' %}" class="button big">Request a Login</a></li>
+						</ul>
+					</section>
+
+                <!-- Items -->
+                <h1 align=center>Meet the Candidates!</h1>
+					<section class="main items">
+                            
+						<article class="item">
+							<header>
+								<a href="#"><img src="{% static 'votesite/images/pic1.jpg' %}" alt="" /></a>
+								<h3>Joseph R. Biden</h3>
+							</header>
+							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
+							<ul class="actions">
+								<li><a href="https://ballotpedia.org/Joe_Biden_presidential_campaign,_2020" class="button">Learn More</a></li>
+							</ul>
+						</article>
+						<article class="item">
+							<header>
+								<a href="https://ballotpedia.org/Donald_Trump_presidential_campaign,_2020"><img src="{% static 'votesite/images/pic2.jpg' %}" alt="" /></a>
+								<h3>Donald J. Trump</h3>
+							</header>
+							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</article>
+						<article class="item">
+							<header>
+								<a href="#"><img src="{% static 'votesite/images/pic03.jpg' %}" alt="" /></a>
+								<h3>Unknown V.P.</h3>
+							</header>
+							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</article>
+						<article class="item">
+							<header>
+								<a href="#"><img src="{% static 'votesite/images/pic4.jpg' %}" alt="" /></a>
+								<h3>Michael R. Pence</h3>
+							</header>
+							<p>Fusce malesuada efficitur venenatis. Pellentesque tempor leo sed massa hendrerit hendrerit. In sed feugiat est, eu congue elit. Ut porta magna vel felis sodales vulputate. Donec faucibus dapibus lacus non ornare.</p>
+							<ul class="actions">
+								<li><a href="https://ballotpedia.org/Mike_Pence#Elections" class="button">Learn More</a></li>
+							</ul>
+						</article>
+					</section>
+
+				<!-- CTA -->
+					<section id="cta" class="main special">
+						<h2>Don't forget to register to vote!</h2>
+						<p>If you will be 18 by November 3rd, 2020 you will be eligible to vote in this election.<br />
+                            Click the link below to register to vote!</p>
+						<ul class="actions">
+							<li><a href="https://ova.elections.il.gov/" class="button big">Register</a></li>
+						</ul>
+					</section>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<h6>Need to get in touch?</h6>
+							<!--<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+							<li><a href="{% url 'contact' %}" class="icon fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Website developed by Nick King. Design: <a href="https://templated.co">TEMPLATED</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'votesite/js/jquery.min.js' %}"></script>
+			<script src="{% static 'votesite/js/skel.min.js' %}"></script>
+			<script src="{% static 'votesite/js/util.js' %}"></script>
+			<script src="{% static 'votesite/js/main.js' %}"></script>
+			<script src="{% static 'votesite/js/navbar.js' %}"></script>
+
+	</body>
+</html>

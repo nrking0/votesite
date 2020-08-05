@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>Voting Booth</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'votesite/css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}">
+    <meta http-equiv="cache-control" content="no-cache" />
+</head>
+
+
+<body>
+
+    <div class="thanks">
+        <p>Thank you for voting!</p>
+    </div>
+
+    <div class="votingbox">
+
+
+        <h2>Current results for: {{ question.question_text }}</h2>
+
+        <ul>
+            {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{% url 'home'  %}">Go Home</a>
+    </div>
+
+</body>
+
+
+</html>
