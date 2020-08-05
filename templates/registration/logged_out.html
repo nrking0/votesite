@@ -1,2 +1,33 @@
-<p>Logged out!</p>  
-  <a href="{% url 'login'%}">Click here to login again.</a>
+
+
+  {% load static %}
+
+  <!DOCTYPE HTML>
+  
+  <html>
+  
+  <head>
+      <title>Login</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'votesite/css/loginstyle.css' %}">
+      <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}" >
+  
+  <body>
+  
+      <div class="loginbox">
+          <h1>Logged out!</h1>
+      </br></br>
+          <h3 style="text-align: center;"><a href="{% url 'login'%}">Click here to login again.</a></h3>
+      </br>
+      <h3 style="text-align: center;"><a href="{% url 'home'%}">Go Home</a></h3>
+         
+          
+      </div>
+  
+  
+  </body>
+  
+  
+  </head>
+  
+  
+  </html>
