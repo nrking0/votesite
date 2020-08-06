@@ -32,7 +32,7 @@ def contact(request):
             msg
             )
 
-        return render(request, 'votesite/contact.html', {'firstname': firstname})
+        return render(request, 'votesite/messagesent.html', {'firstname': firstname})
     
     else:
         return render(request, 'votesite/contact.html', {})
@@ -42,3 +42,21 @@ def contact(request):
 def profile(request):
     username = request.user.first_name
     return render(request, 'votesite/profile.html', {'username': username})
+
+@login_required
+def update(request):
+    if request.method == "POST":
+        firstname = request.POST['fname']
+        lastname = request.POST['lname']
+        email = request.POST['email']
+        password = request.POST['pword']
+        if(firstname != ''):
+            
+            
+            return render(request, 'votesite/update.html', {})
+
+
+
+
+
+    return render(request, 'votesite/update.html', {})

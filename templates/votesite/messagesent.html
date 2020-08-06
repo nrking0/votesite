@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+
+<html>
+
+<head>
+    <title>Vote U-High</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'votesite/css/main.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}">
+    <meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'poll:index' %}">Polls</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'profile' %}">Account</a>
+    </nav>
+
+    <!-- Header -->
+    <header id="header" class="contact">
+        <div class="inner">
+            <h1>Contact Us</h1>
+            <p>Request a login, ask questions, or learn more!</p>
+        </div>
+    </header>
+
+
+    <div id="wrapper">
+
+        <!-- Banner -->
+        <section id="intro" class="main">
+            <span class="icon fa-envelope major"></span>
+                <h1>Thanks {{firstname}}! We have recieved your message and will respond to the listed email soon!</h1>
+            
+                </br>
+                </br>
+
+                <ul class="actions">
+                    <li><a href="{% url 'home' %}" class="button big">Return Home</a></li>
+                </ul>
+           
+        </section>
+    </div>
+
+
+
+
+
+
+    <script src="{% static 'votesite/js/jquery.min.js' %}"></script>
+    <script src="{% static 'votesite/js/skel.min.js' %}"></script>
+    <script src="{% static 'votesite/js/util.js' %}"></script>
+    <script src="{% static 'votesite/js/main.js' %}"></script>
+    <script src="{% static 'votesite/js/navbarcontact.js' %}"></script>
+
+</body>
+
+</html>
