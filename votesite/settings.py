@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 from dotenv import load_dotenv
+import django_heroku
+import dj_database_url
+from decouple import config
 #from django.core import mail
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -51,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'votesite.urls'
@@ -125,6 +129,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressManifestStaticFilesStorage'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
@@ -132,3 +138,5 @@ LOGIN_REDIRECT_URL = 'home'
 
 EMAIL_HOST_PASSWORD= os.getenv("EMAIL_PASS")
 EMAIL_HOST_USER= os.getenv("EMAIL_USER")
+
+django_heroku.settings(locals())
