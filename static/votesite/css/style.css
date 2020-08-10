@@ -1,0 +1,100 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url("../../images/banner.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    backdrop-filter: blur(5px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+p{
+    text-align: center;
+    font-size: 25px;
+}
+
+.error{
+    width: 450px;
+    height: 80px;
+    top: 20%;
+    background: rgba(255,0,0,.5);
+    border-radius: 25px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+}
+
+.thanks{
+    width: 350px;
+    height: 80px;
+    top: 20%;
+    background: rgba(9, 255, 0, 0.5);
+    border-radius: 25px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+}
+
+
+.votingbox{
+    border-radius: 25px;
+    width: 450px;
+    height: 300px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+.votingbox input{
+    position: absolute;
+   left: 33%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: bold;
+}
+
+.votingbox label{
+    position: absolute;
+    left: 38%;
+    
+}
+
+#submit{
+    position: absolute;
+    top: 75%;
+    width: 75px;
+    height: 30px;
+    border-radius: 60%;
+    left: 39%;
+}
+
+
+ a{
+    position: absolute;
+    top: 88%;
+    left: 42.5%;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+ a:hover{
+    color:#ffc107;
+}
+
