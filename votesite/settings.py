@@ -29,7 +29,7 @@ load_dotenv()
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", False)
+DEBUG = (os.environ.get("DEBUG") == 'True')
 
 ALLOWED_HOSTS = []
 
@@ -127,7 +127,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'votesite/static')
 ]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressManifestStaticFilesStorage'
