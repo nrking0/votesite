@@ -27,3 +27,5 @@ urlpatterns = [
     #path('profile/update/', views.update, name="update")
 
 ]
+
+handler404 = views.handler404

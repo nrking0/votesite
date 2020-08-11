@@ -8,6 +8,9 @@ from django.conf import settings
 def home(request):
     return render(request, 'votesite/home.html', {})
 
+def handler404(request, exception):
+    return render(request, 'votesite/404.html', status=404)
+
 def contact(request):
     if request.method == "POST":
         firstname = request.POST['firstname']

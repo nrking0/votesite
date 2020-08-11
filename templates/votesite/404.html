@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+
+<html>
+
+<head>
+    <title>Vote U-High</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'votesite/css/main.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}">
+    <meta http-equiv="cache-control" content="no-cache" />
+
+</head>
+
+<body>
+
+
+
+
+    <div id="wrapper">
+
+        <section style="margin-top: 15vh;" id="intro" class="main">
+            <span class="icon fa-exclamation-circle major"></span>
+            <h2>Sorry, this page does not exist!</h2>
+        </br>
+            <a href="{% url 'home' %}" class="button big">Go back home</a>
+        </section>
+
+
+    </div>
+    <script src="{% static 'votesite/js/jquery.min.js' %}"></script>
+    <script src="{% static 'votesite/js/skel.min.js' %}"></script>
+    <script src="{% static 'votesite/js/util.js' %}"></script>
+    <script src="{% static 'votesite/js/main.js' %}"></script>
+    <script src="{% static 'votesite/js/navbarcontact.js' %}"></script>
+
+</body>
+
+</html>
