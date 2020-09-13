@@ -56,6 +56,23 @@
   	text-align: center;
 	/*margin: 10px 5px 5px 5px;*/
 }
+
+.navbar .navbar-default .navbar-fixed-top > a::after{
+	content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 0%;
+    border-bottom: 2px solid #c57ed3;
+    transition: width 0.3s ease;
+}
+
+.navbar .navbar-default .navbar-fixed-top > a::after:hover{
+	width: 100%;
+}
+
+
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:active, .navbar-default .navbar-nav > li > a:focus {
 	color: #c57ed3;
 	border: 1px solid #c57ed3;
