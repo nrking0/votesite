@@ -4,6 +4,10 @@ from django.utils import timezone
 # Register your models here.
 
 
+class VoterAdmin(admin.ModelAdmin):
+    fields = ('user', 'question')
+    list_display = ('user', 'question')
+
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
@@ -21,5 +25,5 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
-admin.site.register(Voter)
+admin.site.register(Voter, VoterAdmin)
 admin.site.register(Question, QuestionAdmin)
