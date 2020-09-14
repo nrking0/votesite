@@ -6,7 +6,7 @@
   <html>
   
   <head>
-      <title>Login</title>
+      <title>Update Profile</title>
       <link rel="stylesheet" type="text/css" href="{% static 'votesite/css/loginupdate.css' %}">
       <link rel="icon" type="image/png" href="{% static 'votesite/images/favicon2.png' %}" >
   
@@ -14,19 +14,12 @@
   
       <div class="loginbox">
           <h1>Update information</h1>
-          <form method="post" action="{% url 'update' %}">
+          <form method="POST">
             {% csrf_token %}
-            <input type="text" placeholder="Enter Firstname" name="fname">
-            <input type="text" placeholder="Enter Lastname" name="lname">
-            <input type="text" placeholder="Enter Email" name="email">
-            <input type="text" placeholder="Enter Password" name="pword">
-    
-            
-            <input type="submit" value="Update Profile"/>
+            {{form.as_p }}
+            <input type="submit" value="Submit">
             <a href="{% url 'home' %}">Go back home</a>
         </form>
-         
-          
       </div>
   
   

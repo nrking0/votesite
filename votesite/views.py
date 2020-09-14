@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import smtplib
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserChangeForm
+from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
+from .forms import editForm
+
 
 
 def home(request):
@@ -51,20 +57,23 @@ def profile(request):
     username = request.user.first_name
     return render(request, 'votesite/profile.html', {'username': username})
 
+class UserEditView(generic.UpdateView):
+    form_class = UserChangeForm
+    template_name = 'update.html'
+    success_url = reverse_lazy('profile')
+
+    def get_object(self):
+        return self.request.user
+
+
+
 @login_required
 def update(request):
-    if request.method == "POST":
-        firstname = request.POST['fname']
-        lastname = request.POST['lname']
-        email = request.POST['email']
-        password = request.POST['pword']
-        if(firstname != ''):
-            
-            
-            return render(request, 'votesite/update.html', {})
-
-
-
-
-
-    return render(request, 'votesite/update.html', {})
+    if request.method == 'POST':
+        form = editForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = editForm(instance=request.user)
+        return render(request, 'votesite/update.html', {'form' : form})
