@@ -3,10 +3,15 @@ import smtplib
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.contrib.auth.models import User
 
 
 def home(request):
-    return render(request, 'votesite/home.html', {})
+    if request.user.is_authenticated:
+        title = 'Account'
+    else:
+        title = 'Login'
+    return render(request, 'votesite/home.html', {'title' : title})
 
 def handler404(request, exception):
     return render(request, 'votesite/404.html', status=404)
