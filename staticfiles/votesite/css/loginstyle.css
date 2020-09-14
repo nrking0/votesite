@@ -6,6 +6,18 @@ body{
     font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
+.message{
+    width: 450px;
+    height: 50px;
+    top: 15%;
+    background: rgba(0, 255, 21, 0.548);
+    border-radius: 25px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+}
+
 .loginbox{
     width: 300px;
     height: 430px;

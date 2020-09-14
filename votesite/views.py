@@ -57,15 +57,6 @@ def profile(request):
     username = request.user.first_name
     return render(request, 'votesite/profile.html', {'username': username})
 
-class UserEditView(generic.UpdateView):
-    form_class = UserChangeForm
-    template_name = 'update.html'
-    success_url = reverse_lazy('profile')
-
-    def get_object(self):
-        return self.request.user
-
-
 
 @login_required
 def update(request):
@@ -73,7 +64,8 @@ def update(request):
         form = editForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            username = request.user.first_name
+            return render(request, 'votesite/profile.html', {'message' : "Form Submitted Successfully!", 'username': username})
     else:
         form = editForm(instance=request.user)
         return render(request, 'votesite/update.html', {'form' : form})

@@ -1,14 +1,14 @@
 body{
     margin: 0;
     padding: 0;
-    background: url("../../images/banner3.jpg");
+    background: url("../../images/banner3.3303db70ac90.jpg");
     background-size: cover;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
 }
 
 .message{
     width: 450px;
-    height: 50px;
+    height: 80px;
     top: 15%;
     background: rgba(0, 255, 21, 0.548);
     border-radius: 25px;
